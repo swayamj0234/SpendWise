@@ -31,10 +31,10 @@ def add_expense():   #function to add an expense
             print(f"  {i}. {category}")
 
         value_range = f"[1 - {len(expense_category)}]"
-        selected_category = int(input(f"Enter category number {value_range}: "))
 
         if selected_category in range(1, len(expense_category) + 1):
-          new_expense = expense.Expense(name=expense_name, amount=expense_amount, category=expense_category[selected_category - 1])
+          selected_category = int(input(f"Enter category number {value_range}: "))
+          new_expense = expense(name=expense_name, amount=expense_amount, category=expense_category[selected_category - 1])
           return new_expense
         else:
             print(f"Invalid input. Please enter a number {value_range}.")
